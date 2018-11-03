@@ -19,16 +19,41 @@ class DramaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+	func testFetchDramas() {
+		let expectation = XCTestExpectation(description: "Testing APIClient Fetch Dramas callback")
+		
+		APIClient.fetchDramas { (data, error) in
+			if let error = error {
+				print(error)
+				assertionFailure("Testing APIClient Fetch Dramas error reason: \(error.localizedDescription)")
+				expectation.fulfill()
+			}
+			
+			if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+				print(json)
+				expectation.fulfill()
+			}
+		}
+		
+		wait(for: [expectation], timeout: 5)
+	}
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+	func testDataDramas() {
+		let expectation = XCTestExpectation(description: "Testing DataManager dramas callback")
+		
+		DataManager.dramas { (dramas, error) in
+			if let error = error {
+				print(error)
+				assertionFailure("Testing DataManager dramas error reason: \(error.localizedDescription)")
+				expectation.fulfill()
+			}
+			
+			if let dramas = dramas {
+				print(dramas)
+				expectation.fulfill()
+			}
+		}
 
+		wait(for: [expectation], timeout: 5)
+	}
 }

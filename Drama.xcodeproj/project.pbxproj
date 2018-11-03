@@ -15,6 +15,18 @@
 		94CAA426218DBE80000B5652 /* DramaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA425218DBE80000B5652 /* DramaUITests.swift */; };
 		94CAA434218DC002000B5652 /* DramasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA433218DC002000B5652 /* DramasViewController.swift */; };
 		94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA435218DC00C000B5652 /* DramaViewController.swift */; };
+		94CAA438218DC108000B5652 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA437218DC108000B5652 /* APIClient.swift */; };
+		94CAA439218DC481000B5652 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA437218DC108000B5652 /* APIClient.swift */; };
+		94CAA43B218DDA6D000B5652 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA43A218DDA6D000B5652 /* DataManager.swift */; };
+		94CAA43D218DDB78000B5652 /* DramaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA43C218DDB78000B5652 /* DramaModel.swift */; };
+		94CAA43E218DDB78000B5652 /* DramaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA43C218DDB78000B5652 /* DramaModel.swift */; };
+		94CAA43F218DDB78000B5652 /* DramaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA43C218DDB78000B5652 /* DramaModel.swift */; };
+		94CAA445218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */; };
+		94CAA446218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */; };
+		94CAA447218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */; };
+		94CAA44A218DEC52000B5652 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA449218DEC52000B5652 /* ResponseModel.swift */; };
+		94CAA44B218DEC52000B5652 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA449218DEC52000B5652 /* ResponseModel.swift */; };
+		94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA449218DEC52000B5652 /* ResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,11 @@
 		94CAA427218DBE80000B5652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94CAA433218DC002000B5652 /* DramasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramasViewController.swift; sourceTree = "<group>"; };
 		94CAA435218DC00C000B5652 /* DramaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaViewController.swift; sourceTree = "<group>"; };
+		94CAA437218DC108000B5652 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		94CAA43A218DDA6D000B5652 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		94CAA43C218DDB78000B5652 /* DramaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaModel.swift; sourceTree = "<group>"; };
+		94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Extension.swift"; sourceTree = "<group>"; };
+		94CAA449218DEC52000B5652 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +116,15 @@
 		94CAA404218DBE7E000B5652 /* Drama */ = {
 			isa = PBXGroup;
 			children = (
-				94CAA405218DBE7E000B5652 /* AppDelegate.swift */,
-				94CAA409218DBE7E000B5652 /* Main.storyboard */,
-				94CAA40C218DBE80000B5652 /* Assets.xcassets */,
-				94CAA40E218DBE80000B5652 /* LaunchScreen.storyboard */,
 				94CAA411218DBE80000B5652 /* Info.plist */,
-				94CAA435218DC00C000B5652 /* DramaViewController.swift */,
-				94CAA433218DC002000B5652 /* DramasViewController.swift */,
+				94CAA405218DBE7E000B5652 /* AppDelegate.swift */,
+				94CAA40C218DBE80000B5652 /* Assets.xcassets */,
+				94CAA448218DDDA3000B5652 /* Extensions */,
+				94CAA443218DDB98000B5652 /* Flows */,
+				94CAA40E218DBE80000B5652 /* LaunchScreen.storyboard */,
+				94CAA409218DBE7E000B5652 /* Main.storyboard */,
+				94CAA442218DDB8F000B5652 /* Managers */,
+				94CAA441218DDB88000B5652 /* Models */,
 			);
 			path = Drama;
 			sourceTree = "<group>";
@@ -126,6 +145,41 @@
 				94CAA427218DBE80000B5652 /* Info.plist */,
 			);
 			path = DramaUITests;
+			sourceTree = "<group>";
+		};
+		94CAA441218DDB88000B5652 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94CAA43C218DDB78000B5652 /* DramaModel.swift */,
+				94CAA449218DEC52000B5652 /* ResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		94CAA442218DDB8F000B5652 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				94CAA437218DC108000B5652 /* APIClient.swift */,
+				94CAA43A218DDA6D000B5652 /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		94CAA443218DDB98000B5652 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				94CAA433218DC002000B5652 /* DramasViewController.swift */,
+				94CAA435218DC00C000B5652 /* DramaViewController.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		94CAA448218DDDA3000B5652 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */,
+				94CAA43B218DDA6D000B5652 /* DataManager.swift in Sources */,
 				94CAA434218DC002000B5652 /* DramasViewController.swift in Sources */,
 				94CAA406218DBE7E000B5652 /* AppDelegate.swift in Sources */,
+				94CAA445218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
+				94CAA438218DC108000B5652 /* APIClient.swift in Sources */,
+				94CAA44A218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94CAA43D218DDB78000B5652 /* DramaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				94CAA41B218DBE80000B5652 /* DramaTests.swift in Sources */,
+				94CAA439218DC481000B5652 /* APIClient.swift in Sources */,
+				94CAA43E218DDB78000B5652 /* DramaModel.swift in Sources */,
+				94CAA44B218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94CAA446218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +341,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				94CAA426218DBE80000B5652 /* DramaUITests.swift in Sources */,
+				94CAA447218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
+				94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94CAA43F218DDB78000B5652 /* DramaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
