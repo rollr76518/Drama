@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		94CAA406218DBE7E000B5652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA405218DBE7E000B5652 /* AppDelegate.swift */; };
-		94CAA408218DBE7E000B5652 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA407218DBE7E000B5652 /* ViewController.swift */; };
 		94CAA40B218DBE7E000B5652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA409218DBE7E000B5652 /* Main.storyboard */; };
 		94CAA40D218DBE80000B5652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA40C218DBE80000B5652 /* Assets.xcassets */; };
 		94CAA410218DBE80000B5652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA40E218DBE80000B5652 /* LaunchScreen.storyboard */; };
 		94CAA41B218DBE80000B5652 /* DramaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA41A218DBE80000B5652 /* DramaTests.swift */; };
 		94CAA426218DBE80000B5652 /* DramaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA425218DBE80000B5652 /* DramaUITests.swift */; };
+		94CAA434218DC002000B5652 /* DramasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA433218DC002000B5652 /* DramasViewController.swift */; };
+		94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA435218DC00C000B5652 /* DramaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		94CAA402218DBE7E000B5652 /* Drama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CAA405218DBE7E000B5652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94CAA407218DBE7E000B5652 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94CAA40A218DBE7E000B5652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94CAA40C218DBE80000B5652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94CAA40F218DBE80000B5652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		94CAA421218DBE80000B5652 /* DramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CAA425218DBE80000B5652 /* DramaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaUITests.swift; sourceTree = "<group>"; };
 		94CAA427218DBE80000B5652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94CAA433218DC002000B5652 /* DramasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramasViewController.swift; sourceTree = "<group>"; };
+		94CAA435218DC00C000B5652 /* DramaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				94CAA405218DBE7E000B5652 /* AppDelegate.swift */,
-				94CAA407218DBE7E000B5652 /* ViewController.swift */,
 				94CAA409218DBE7E000B5652 /* Main.storyboard */,
 				94CAA40C218DBE80000B5652 /* Assets.xcassets */,
 				94CAA40E218DBE80000B5652 /* LaunchScreen.storyboard */,
 				94CAA411218DBE80000B5652 /* Info.plist */,
+				94CAA435218DC00C000B5652 /* DramaViewController.swift */,
+				94CAA433218DC002000B5652 /* DramasViewController.swift */,
 			);
 			path = Drama;
 			sourceTree = "<group>";
@@ -256,7 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CAA408218DBE7E000B5652 /* ViewController.swift in Sources */,
+				94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */,
+				94CAA434218DC002000B5652 /* DramasViewController.swift in Sources */,
 				94CAA406218DBE7E000B5652 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
