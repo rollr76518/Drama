@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		appURLCacheSetup()
+
 		return true
 	}
 
@@ -44,3 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+	private func appURLCacheSetup() {
+		// App URL Cache Setup
+		let memory500MB = 500 * 1024 * 1024
+		let cache = URLCache(memoryCapacity: memory500MB, diskCapacity: memory500MB, diskPath: nil)
+		URLCache.shared = cache
+	}
+}

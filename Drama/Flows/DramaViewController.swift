@@ -20,12 +20,18 @@ class DramaViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+		setupUI()
+    }
+
+}
+
+private extension DramaViewController {
+	func setupUI() {
 		title = drama.name
 		let rating = String(format: "%.2f", drama.rating)
 		ratingLabel.text = "評分：\(rating)"
 		issueLabel.text = "出版日期：\(drama.createdAt.formatter("yyyy/MM/dd"))"
 		totalViewsLabel.text = "觀看次數：\(drama.totalViews.thousandFormatter())"
 		thumbImageView.imageFromURL(drama.thumbURL, placeholder: #imageLiteral(resourceName: "placeholder"))
-    }
-
+	}
 }

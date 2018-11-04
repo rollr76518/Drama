@@ -83,19 +83,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Tgx-AF-mop">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bRa-vP-5IF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評分：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6r-hq-7Mr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="140.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出版日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gda-Um-qV6">
-                                                                <rect key="frame" x="140.5" y="0.0" width="234.5" height="40"/>
+                                                                <rect key="frame" x="134.5" y="0.0" width="224.5" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="觀看次數：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx1-GG-rn8">
-                                                        <rect key="frame" x="0.0" y="40" width="375" height="40"/>
+                                                        <rect key="frame" x="0.0" y="40" width="359" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -119,8 +119,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Tgx-AF-mop" firstAttribute="leading" secondItem="BVe-lP-Xo9" secondAttribute="leading" id="1Vx-fX-NNP"/>
-                                            <constraint firstAttribute="trailing" secondItem="Tgx-AF-mop" secondAttribute="trailing" id="ClA-lC-5tQ"/>
+                                            <constraint firstItem="Tgx-AF-mop" firstAttribute="leading" secondItem="BVe-lP-Xo9" secondAttribute="leading" constant="8" id="1Vx-fX-NNP"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tgx-AF-mop" secondAttribute="trailing" constant="8" id="ClA-lC-5tQ"/>
                                             <constraint firstAttribute="bottom" secondItem="v6a-qB-eDJ" secondAttribute="bottom" id="HCF-vf-boJ"/>
                                             <constraint firstItem="Tgx-AF-mop" firstAttribute="top" secondItem="BVe-lP-Xo9" secondAttribute="top" id="SQy-J0-r2S"/>
                                             <constraint firstAttribute="trailing" secondItem="v6a-qB-eDJ" secondAttribute="trailing" id="eun-W4-Lhm"/>

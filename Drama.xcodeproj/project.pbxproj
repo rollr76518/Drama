@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		947523F2218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947523F1218EC0EE00F8FE94 /* UIAlertController+Extension.swift */; };
+		947523F3218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947523F1218EC0EE00F8FE94 /* UIAlertController+Extension.swift */; };
+		947523F4218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947523F1218EC0EE00F8FE94 /* UIAlertController+Extension.swift */; };
 		94A05959218EA932007E0444 /* KeyedEncodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */; };
 		94CAA406218DBE7E000B5652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA405218DBE7E000B5652 /* AppDelegate.swift */; };
 		94CAA40B218DBE7E000B5652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA409218DBE7E000B5652 /* Main.storyboard */; };
@@ -75,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		947523F1218EC0EE00F8FE94 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedEncodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		94CAA402218DBE7E000B5652 /* Drama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CAA405218DBE7E000B5652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -219,12 +223,13 @@
 			children = (
 				94CAA462218E8A09000B5652 /* Cell+Extension.swift */,
 				94CAA44D218DF0FA000B5652 /* Date+Extension.swift */,
+				94CAA472218E93AD000B5652 /* Int+Extension.swift */,
 				94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */,
 				94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */,
-				94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */,
-				94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */,
-				94CAA472218E93AD000B5652 /* Int+Extension.swift */,
 				94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */,
+				94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */,
+				947523F1218EC0EE00F8FE94 /* UIAlertController+Extension.swift */,
+				94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947523F2218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */,
 				94CAA473218E93AD000B5652 /* Int+Extension.swift in Sources */,
 				94CAA463218E8A09000B5652 /* Cell+Extension.swift in Sources */,
 				94CAA452218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
@@ -405,6 +411,7 @@
 				94CAA439218DC481000B5652 /* APIClient.swift in Sources */,
 				94CAA453218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
 				94CAA43E218DDB78000B5652 /* DramaModel.swift in Sources */,
+				947523F3218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */,
 				94CAA44B218DEC52000B5652 /* ResponseModel.swift in Sources */,
 				94CAA47C218E9AA1000B5652 /* Notification+Extension.swift in Sources */,
 				94CAA474218E93AD000B5652 /* Int+Extension.swift in Sources */,
@@ -425,6 +432,7 @@
 				94CAA465218E8A09000B5652 /* Cell+Extension.swift in Sources */,
 				94CAA479218E9899000B5652 /* InternetStatus.swift in Sources */,
 				94CAA475218E93AD000B5652 /* Int+Extension.swift in Sources */,
+				947523F4218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */,
 				94CAA469218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 				94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */,
 				94CAA45D218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,

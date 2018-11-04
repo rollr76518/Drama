@@ -19,6 +19,8 @@ class DramasViewController: UIViewController {
 	}
 	@IBOutlet var searchBar: UISearchBar!
 	
+	let kTableViewCellHeight: CGFloat = 120.0
+	
 	fileprivate var rawDramas = [DramaModel]() {
 		didSet {
 			filteredDramas = rawDramas
@@ -38,10 +40,17 @@ class DramasViewController: UIViewController {
         super.viewDidLoad()
 
 		title = "戲劇列表"
-		navigationController?.navigationBar.prefersLargeTitles = true
 		
 		loadData()
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
+			tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+		}
+	}
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,7 +74,8 @@ private extension DramasViewController {
 				case .success(let dramas):
 					self.rawDramas = dramas
 				case .failure(let error):
-					print(error.localizedDescription)
+					let alert = UIAlertController(title: "錯誤", message: error.localizedDescription)
+					self.present(alert, animated: true, completion: nil)
 				}
 			}
 		}
@@ -103,7 +113,7 @@ extension DramasViewController: UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 120.0
+		return kTableViewCellHeight
 	}
 }
 
