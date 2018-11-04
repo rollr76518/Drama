@@ -27,6 +27,27 @@
 		94CAA44A218DEC52000B5652 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA449218DEC52000B5652 /* ResponseModel.swift */; };
 		94CAA44B218DEC52000B5652 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA449218DEC52000B5652 /* ResponseModel.swift */; };
 		94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA449218DEC52000B5652 /* ResponseModel.swift */; };
+		94CAA44E218DF0FA000B5652 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA44D218DF0FA000B5652 /* Date+Extension.swift */; };
+		94CAA44F218DF0FA000B5652 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA44D218DF0FA000B5652 /* Date+Extension.swift */; };
+		94CAA450218DF0FA000B5652 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA44D218DF0FA000B5652 /* Date+Extension.swift */; };
+		94CAA452218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */; };
+		94CAA453218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */; };
+		94CAA454218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */; };
+		94CAA45B218E86DD000B5652 /* BriefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA459218E86DD000B5652 /* BriefTableViewCell.swift */; };
+		94CAA45C218E86DD000B5652 /* BriefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA459218E86DD000B5652 /* BriefTableViewCell.swift */; };
+		94CAA45D218E86DD000B5652 /* BriefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA459218E86DD000B5652 /* BriefTableViewCell.swift */; };
+		94CAA45E218E86DD000B5652 /* BriefTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA45A218E86DD000B5652 /* BriefTableViewCell.xib */; };
+		94CAA45F218E86DD000B5652 /* BriefTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA45A218E86DD000B5652 /* BriefTableViewCell.xib */; };
+		94CAA460218E86DD000B5652 /* BriefTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA45A218E86DD000B5652 /* BriefTableViewCell.xib */; };
+		94CAA463218E8A09000B5652 /* Cell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA462218E8A09000B5652 /* Cell+Extension.swift */; };
+		94CAA464218E8A09000B5652 /* Cell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA462218E8A09000B5652 /* Cell+Extension.swift */; };
+		94CAA465218E8A09000B5652 /* Cell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA462218E8A09000B5652 /* Cell+Extension.swift */; };
+		94CAA467218E8AFE000B5652 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */; };
+		94CAA468218E8AFE000B5652 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */; };
+		94CAA469218E8AFE000B5652 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */; };
+		94CAA473218E93AD000B5652 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA472218E93AD000B5652 /* Int+Extension.swift */; };
+		94CAA474218E93AD000B5652 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA472218E93AD000B5652 /* Int+Extension.swift */; };
+		94CAA475218E93AD000B5652 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA472218E93AD000B5652 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +87,13 @@
 		94CAA43C218DDB78000B5652 /* DramaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaModel.swift; sourceTree = "<group>"; };
 		94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		94CAA449218DEC52000B5652 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		94CAA44D218DF0FA000B5652 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		94CAA459218E86DD000B5652 /* BriefTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefTableViewCell.swift; sourceTree = "<group>"; };
+		94CAA45A218E86DD000B5652 /* BriefTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefTableViewCell.xib; sourceTree = "<group>"; };
+		94CAA462218E8A09000B5652 /* Cell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extension.swift"; sourceTree = "<group>"; };
+		94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		94CAA472218E93AD000B5652 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +147,7 @@
 				94CAA411218DBE80000B5652 /* Info.plist */,
 				94CAA405218DBE7E000B5652 /* AppDelegate.swift */,
 				94CAA40C218DBE80000B5652 /* Assets.xcassets */,
+				94CAA461218E86E2000B5652 /* Cells */,
 				94CAA448218DDDA3000B5652 /* Extensions */,
 				94CAA443218DDB98000B5652 /* Flows */,
 				94CAA40E218DBE80000B5652 /* LaunchScreen.storyboard */,
@@ -177,9 +206,24 @@
 		94CAA448218DDDA3000B5652 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				94CAA462218E8A09000B5652 /* Cell+Extension.swift */,
+				94CAA44D218DF0FA000B5652 /* Date+Extension.swift */,
 				94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */,
+				94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */,
+				94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */,
+				94CAA472218E93AD000B5652 /* Int+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		94CAA461218E86E2000B5652 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				94CAA459218E86DD000B5652 /* BriefTableViewCell.swift */,
+				94CAA45A218E86DD000B5652 /* BriefTableViewCell.xib */,
+			);
+			name = Cells;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +332,7 @@
 			files = (
 				94CAA410218DBE80000B5652 /* LaunchScreen.storyboard in Resources */,
 				94CAA40D218DBE80000B5652 /* Assets.xcassets in Resources */,
+				94CAA45E218E86DD000B5652 /* BriefTableViewCell.xib in Resources */,
 				94CAA40B218DBE7E000B5652 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CAA45F218E86DD000B5652 /* BriefTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CAA460218E86DD000B5652 /* BriefTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CAA473218E93AD000B5652 /* Int+Extension.swift in Sources */,
+				94CAA463218E8A09000B5652 /* Cell+Extension.swift in Sources */,
+				94CAA452218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
+				94CAA45B218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
 				94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */,
 				94CAA43B218DDA6D000B5652 /* DataManager.swift in Sources */,
 				94CAA434218DC002000B5652 /* DramasViewController.swift in Sources */,
@@ -321,6 +372,8 @@
 				94CAA438218DC108000B5652 /* APIClient.swift in Sources */,
 				94CAA44A218DEC52000B5652 /* ResponseModel.swift in Sources */,
 				94CAA43D218DDB78000B5652 /* DramaModel.swift in Sources */,
+				94CAA44E218DF0FA000B5652 /* Date+Extension.swift in Sources */,
+				94CAA467218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,11 +381,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CAA464218E8A09000B5652 /* Cell+Extension.swift in Sources */,
 				94CAA41B218DBE80000B5652 /* DramaTests.swift in Sources */,
+				94CAA45C218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
+				94CAA468218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 				94CAA439218DC481000B5652 /* APIClient.swift in Sources */,
+				94CAA453218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
 				94CAA43E218DDB78000B5652 /* DramaModel.swift in Sources */,
 				94CAA44B218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94CAA474218E93AD000B5652 /* Int+Extension.swift in Sources */,
 				94CAA446218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
+				94CAA44F218DF0FA000B5652 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +399,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CAA454218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
+				94CAA450218DF0FA000B5652 /* Date+Extension.swift in Sources */,
 				94CAA426218DBE80000B5652 /* DramaUITests.swift in Sources */,
 				94CAA447218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
+				94CAA465218E8A09000B5652 /* Cell+Extension.swift in Sources */,
+				94CAA475218E93AD000B5652 /* Int+Extension.swift in Sources */,
+				94CAA469218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 				94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94CAA45D218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
 				94CAA43F218DDB78000B5652 /* DramaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

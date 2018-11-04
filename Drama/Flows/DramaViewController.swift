@@ -10,21 +10,22 @@ import UIKit
 
 class DramaViewController: UIViewController {
 
-    override func viewDidLoad() {
+	var drama: DramaModel!
+	
+	@IBOutlet var ratingLabel: UILabel!
+	@IBOutlet var issueLabel: UILabel!
+	@IBOutlet var totalViewsLabel: UILabel!
+	@IBOutlet var thumbImageView: UIImageView!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		title = drama.name
+		let rating = String(format: "%.2f", drama.rating)
+		ratingLabel.text = "評分：\(rating)"
+		issueLabel.text = "出版日期：\(drama.createdAt.formatter("yyyy/MM/dd"))"
+		totalViewsLabel.text = "觀看次數：\(drama.totalViews.thousandFormatter())"
+		thumbImageView.imageFromURL(drama.thumbURL, placeholder: #imageLiteral(resourceName: "placeholder"))
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -13,7 +13,7 @@ struct DramaModel {
 	var name: String
 	var totalViews: Int
 	var createdAt: Date
-	var thumbURL: String
+	var thumbURL: URL
 	var rating: Float
 }
 
@@ -30,7 +30,7 @@ extension DramaModel: Decodable {
 		name = try values.decode(String.self, forKey: .name)
 		totalViews = try values.decode(Int.self, forKey: .totalViews)
 		createdAt = try values.decodeDateFromString(String.self, forKey: .createdAt)
-		thumbURL = try values.decode(String.self, forKey: .thumbURL)
+		thumbURL = try values.decodeURLFromString(String.self, forKey: .thumbURL)
 		rating = try values.decode(Float.self, forKey: .rating)
 	}
 }

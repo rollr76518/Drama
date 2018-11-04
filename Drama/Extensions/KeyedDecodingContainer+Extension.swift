@@ -35,4 +35,16 @@ extension KeyedDecodingContainer {
 			throw error
 		}
 	}
+
+	func decodeURLFromString(_ type: String.Type, forKey key: KeyedDecodingContainer.Key) throws -> URL {
+		do {
+			let string = try decode(String.self, forKey: key)
+			//TODO: should handle if string invalid
+			let url = URL(string: string)!
+			
+			return url
+		} catch {
+			throw error
+		}
+	}
 }
