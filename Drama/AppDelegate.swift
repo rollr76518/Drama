@@ -33,18 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		//可讓瀏覽器或其他 App 透過 http://www.example.com/dramas/:id 當 :id 帶入 1 時，開啟資料中 drama_id 為 1 的戲劇。
 		if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+			//TODO: create an universal link manager
 			if let url = userActivity.webpageURL, url.pathComponents.count == 3, url.pathComponents[1] == "dramas" {
 				let dramaId = url.lastPathComponent
-				if let window = window,
-					let navigationController = window.rootViewController as? UINavigationController,
-					let dramasViewController = navigationController.viewControllers.first as? DramasViewController {
+				
+				//TODO: load local drama failed should fetch web
+				guard let drama = try? DataManager.loadDrama(id: dramaId) else {
+					return true
+				}
+				
+				//TODO: create a storyboard manager
+				if let window = window, let navigationController = window.rootViewController as? UINavigationController {
 					if let dramaViewController = navigationController.viewControllers.last as? DramaViewController {
-						if let drama = try? DataManager.loadDrama(id: dramaId) {
-							dramaViewController.drama = drama
-							dramaViewController.setupUI()
-						}
-					} else if let drama = try? DataManager.loadDrama(id: dramaId) {
-						dramasViewController.performSegue(withIdentifier: DramaViewController.identifier, sender: drama)
+						dramaViewController.drama = drama
+					} else {
+						let storyboard = UIStoryboard(name: "Main", bundle: nil)
+						let dramaViewController = storyboard.instantiateViewController(withIdentifier: DramaViewController.identifier) as! DramaViewController
+						dramaViewController.drama = drama
+						navigationController.pushViewController(dramaViewController, animated: false)
 					}
 				}
 			}
@@ -52,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		return true
 	}
+	
 	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

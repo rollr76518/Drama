@@ -10,7 +10,13 @@ import UIKit
 
 class DramaViewController: UIViewController {
 
-	var drama: DramaModel?
+	var drama: DramaModel? {
+		didSet {
+			if isViewLoaded {
+				setupUI()
+			}
+		}
+	}
 	
 	@IBOutlet var ratingLabel: UILabel!
 	@IBOutlet var issueLabel: UILabel!
@@ -52,7 +58,6 @@ extension DramaViewController {
 		let dramaId = coder.decodeObject(forKey: DramaViewController.kDramaId) as! String
 		if let drama = try? DataManager.loadDrama(id: dramaId) {
 			self.drama = drama
-			setupUI()
 		}
 		super.decodeRestorableState(with: coder)
 	}

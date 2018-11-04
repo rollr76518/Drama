@@ -17,6 +17,8 @@ class DramasViewController: UIViewController {
 			tableView.keyboardDismissMode = .onDrag
 		}
 	}
+	
+	//TODO: UISearchBarController
 	@IBOutlet var searchBar: UISearchBar!
 	
 	let kTableViewCellHeight: CGFloat = 120.0
@@ -63,6 +65,7 @@ class DramasViewController: UIViewController {
 
 private extension DramasViewController {
 	func loadData() {
+		//TODO: HUD
 		DataManager.dramas { [weak self] (status) in
 			if let `self` = self {
 				switch status {
