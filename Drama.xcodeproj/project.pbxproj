@@ -78,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94476E74218ED88100B6E174 /* Drama.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Drama.entitlements; sourceTree = "<group>"; };
 		947523F1218EC0EE00F8FE94 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedEncodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		94CAA402218DBE7E000B5652 /* Drama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drama.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +159,7 @@
 		94CAA404218DBE7E000B5652 /* Drama */ = {
 			isa = PBXGroup;
 			children = (
+				94476E74218ED88100B6E174 /* Drama.entitlements */,
 				94CAA411218DBE80000B5652 /* Info.plist */,
 				94CAA405218DBE7E000B5652 /* AppDelegate.swift */,
 				94CAA40C218DBE80000B5652 /* Assets.xcassets */,
@@ -312,6 +314,11 @@
 				TargetAttributes = {
 					94CAA401218DBE7E000B5652 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					94CAA415218DBE80000B5652 = {
 						CreatedOnToolsVersion = 10.1;
@@ -595,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Drama/Drama.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LB9NKBAM6;
 				INFOPLIST_FILE = Drama/Info.plist;
@@ -603,7 +611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ryanrange.Drama;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.drama.practice.ryanrange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -614,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Drama/Drama.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LB9NKBAM6;
 				INFOPLIST_FILE = Drama/Info.plist;
@@ -622,7 +631,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ryanrange.Drama;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.drama.practice.ryanrange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

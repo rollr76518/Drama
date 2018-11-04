@@ -21,7 +21,7 @@ class DramasViewController: UIViewController {
 	
 	let kTableViewCellHeight: CGFloat = 120.0
 	
-	fileprivate var rawDramas = [DramaModel]() {
+	var rawDramas = [DramaModel]() {
 		didSet {
 			DispatchQueue.main.async {
 				let filterString = self.searchBar.text ?? ""
@@ -46,19 +46,11 @@ class DramasViewController: UIViewController {
 		
 		loadData()
     }
-	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		
-		if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
-			tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
-		}
-	}
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? DramaViewController,
-			let drama = sender as? DramaModel {
+			let drama = sender as? DramaModel? {
 			vc.drama = drama
 		}
     }
@@ -122,6 +114,8 @@ extension DramasViewController: UITableViewDataSource {
 
 extension DramasViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+
 		let drama = filteredDramas[indexPath.row]
 		
 		performSegue(withIdentifier: DramaViewController.identifier, sender: drama)

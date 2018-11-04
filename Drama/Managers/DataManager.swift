@@ -50,6 +50,20 @@ extension DataManager {
 }
 
 extension DataManager {
+	static func loadDrama(id: String) throws -> DramaModel? {
+		do {
+			let dramas = try DataManager.loadLocal(DramaModel.self, key: Notification.Name.kLocalDramas.rawValue)
+			let drama = dramas.filter { (drama) -> Bool in
+				return drama.id == id
+			}.first
+			return drama
+		} catch {
+			throw error
+		}
+	}
+}
+
+extension DataManager {
 	static func save<T: Codable>(_ models: [T], key: String) throws {
 		do {
 			let encoder = JSONEncoder()
