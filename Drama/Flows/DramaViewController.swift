@@ -56,7 +56,7 @@ extension DramaViewController {
 	
 	override func decodeRestorableState(with coder: NSCoder) {
 		let dramaId = coder.decodeObject(forKey: DramaViewController.kDramaId) as! String
-		if let drama = try? DataManager.loadDrama(id: dramaId) {
+		if let drama = try? DataManager.loadLocalDrama(id: dramaId) {
 			self.drama = drama
 		}
 		super.decodeRestorableState(with: coder)

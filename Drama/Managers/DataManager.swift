@@ -50,7 +50,7 @@ extension DataManager {
 }
 
 extension DataManager {
-	static func loadDrama(id: String) throws -> DramaModel? {
+	static func loadLocalDrama(id: String) throws -> DramaModel? {
 		do {
 			let dramas = try DataManager.loadLocal(DramaModel.self, key: Notification.Name.kLocalDramas.rawValue)
 			let drama = dramas.filter { (drama) -> Bool in

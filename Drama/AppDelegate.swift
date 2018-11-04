@@ -33,30 +33,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		//可讓瀏覽器或其他 App 透過 http://www.example.com/dramas/:id 當 :id 帶入 1 時，開啟資料中 drama_id 為 1 的戲劇。
 		if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-			//TODO: create an universal link manager
-			if let url = userActivity.webpageURL, url.pathComponents.count == 3, url.pathComponents[1] == "dramas" {
-				let dramaId = url.lastPathComponent
-				
-				//TODO: load local drama failed should fetch web
-				guard let drama = try? DataManager.loadDrama(id: dramaId) else {
-					return true
-				}
-				
-				//TODO: create a storyboard manager
-				if let window = window, let navigationController = window.rootViewController as? UINavigationController {
-					if let dramaViewController = navigationController.viewControllers.last as? DramaViewController {
-						dramaViewController.drama = drama
-					} else {
-						let storyboard = UIStoryboard(name: "Main", bundle: nil)
-						let dramaViewController = storyboard.instantiateViewController(withIdentifier: DramaViewController.identifier) as! DramaViewController
-						dramaViewController.drama = drama
-						navigationController.pushViewController(dramaViewController, animated: false)
+			let linkStatus = UniversalLinkParser.link(userActivity.webpageURL)
+			switch linkStatus {
+			case .success(let contentType, let id):
+				switch contentType {
+				case .dramas:
+					guard let drama = try? DataManager.loadLocalDrama(id: id) else {
+						return false
 					}
+					let dramaViewController = ViewControllernitializer.viewController(DramaViewController.self)
+					dramaViewController.drama = drama
+					return true
+				case .none:
+					return false
 				}
+			case .failure:
+				return false
 			}
 		}
 		
-		return true
+		return false
 	}
 	
 	func applicationWillResignActive(_ application: UIApplication) {
