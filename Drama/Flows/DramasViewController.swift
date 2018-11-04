@@ -14,10 +14,17 @@ class DramasViewController: UIViewController {
 		didSet {
 			tableView.register(BriefTableViewCell.nib, forCellReuseIdentifier: BriefTableViewCell.identifier)
 			tableView.tableFooterView = UIView(frame: CGRect.zero)
+			tableView.keyboardDismissMode = .onDrag
 		}
 	}
+	@IBOutlet var searchBar: UISearchBar!
 	
-	fileprivate var dramas = [DramaModel]() {
+	fileprivate var rawDramas = [DramaModel]() {
+		didSet {
+			filteredDramas = rawDramas
+		}
+	}
+	fileprivate var filteredDramas = [DramaModel]() {
 		didSet {
 			if isViewLoaded {
 				DispatchQueue.main.async {
@@ -30,9 +37,11 @@ class DramasViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+		title = "戲劇列表"
+		navigationController?.navigationBar.prefersLargeTitles = true
+		
 		loadData()
     }
-    
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +51,10 @@ class DramasViewController: UIViewController {
 		}
     }
 
+	// MARK: - IBActions
+	@IBAction func viewDidTap(_ sender: UITapGestureRecognizer) {
+		searchBar.resignFirstResponder()
+	}
 }
 
 private extension DramasViewController {
@@ -50,7 +63,7 @@ private extension DramasViewController {
 			if let `self` = self {
 				switch status {
 				case .success(let dramas):
-					self.dramas = dramas
+					self.rawDramas = dramas
 				case .failure(let error):
 					print(error.localizedDescription)
 				}
@@ -61,13 +74,13 @@ private extension DramasViewController {
 
 extension DramasViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return dramas.count
+		return filteredDramas.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: BriefTableViewCell.identifier, for: indexPath) as! BriefTableViewCell
 		
-		let drama = dramas[indexPath.row]
+		let drama = filteredDramas[indexPath.row]
 		cell.primaryLabel.text = drama.name
 
 		let rating = String(format: "%.2f", drama.rating)
@@ -84,12 +97,40 @@ extension DramasViewController: UITableViewDataSource {
 
 extension DramasViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let drama = dramas[indexPath.row]
+		let drama = filteredDramas[indexPath.row]
 		
 		performSegue(withIdentifier: DramaViewController.identifier, sender: drama)
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 120.0
+	}
+}
+
+extension DramasViewController: UISearchBarDelegate {
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		if searchText != "" {
+			filteredDramas = rawDramas.filter({ (drama) -> Bool in
+				let lowcaseSearchText = searchText.lowercased()
+				let lowcaseName = drama.name.lowercased()
+				return lowcaseName.contains(lowcaseSearchText)
+			})
+		} else {
+			filteredDramas = rawDramas
+		}
+	}
+	
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
+	}
+	
+	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
+	}
+}
+
+extension DramasViewController: UIGestureRecognizerDelegate {
+	func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+		return searchBar.isFirstResponder
 	}
 }

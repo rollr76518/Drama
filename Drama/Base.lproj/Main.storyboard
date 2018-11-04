@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="H8R-tD-IvB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8JK-X6-pli"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-07-cdZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="dzA-nj-iQO"/>
@@ -28,21 +35,36 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="V0d-07-cdZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vX-Y0-snq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V0d-07-cdZ" secondAttribute="trailing" id="9ew-7e-hb0"/>
-                            <constraint firstItem="V0d-07-cdZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EUm-bg-nHr"/>
+                            <constraint firstItem="V0d-07-cdZ" firstAttribute="top" secondItem="H8R-tD-IvB" secondAttribute="bottom" id="H7d-ax-cjo"/>
+                            <constraint firstItem="H8R-tD-IvB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PEX-mx-8vY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H8R-tD-IvB" secondAttribute="trailing" id="ehC-7T-Gh2"/>
+                            <constraint firstItem="H8R-tD-IvB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jgl-fx-kIY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V0d-07-cdZ" secondAttribute="bottom" id="xQ6-xe-QKN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sTh-mU-BxQ" appends="YES" id="8e7-JZ-1sa"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="N3b-oM-Ula"/>
                     <connections>
+                        <outlet property="searchBar" destination="H8R-tD-IvB" id="zdg-n1-yGF"/>
                         <outlet property="tableView" destination="V0d-07-cdZ" id="pUk-fN-h8A"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="4BO-8G-icg"/>
                         <segue destination="EIz-uc-vc3" kind="show" identifier="DramaViewController" id="cge-2I-kJm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sTh-mU-BxQ">
+                    <connections>
+                        <action selector="viewDidTap:" destination="BYZ-38-t0r" id="WQI-Ck-bY7"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="YqP-sE-8qw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1010" y="134"/>
         </scene>
