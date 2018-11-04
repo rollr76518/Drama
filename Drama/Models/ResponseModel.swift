@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct responseModel<T: Decodable> {
+struct ResponseModel<T: Decodable> {
 	var data: [T]
 }
 
-extension responseModel: Decodable {
+extension ResponseModel: Decodable {
 	enum CodingKeys: String, CodingKey {
 		case data
 	}

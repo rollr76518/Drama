@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94A05959218EA932007E0444 /* KeyedEncodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */; };
 		94CAA406218DBE7E000B5652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA405218DBE7E000B5652 /* AppDelegate.swift */; };
 		94CAA40B218DBE7E000B5652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA409218DBE7E000B5652 /* Main.storyboard */; };
 		94CAA40D218DBE80000B5652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CAA40C218DBE80000B5652 /* Assets.xcassets */; };
@@ -48,6 +49,12 @@
 		94CAA473218E93AD000B5652 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA472218E93AD000B5652 /* Int+Extension.swift */; };
 		94CAA474218E93AD000B5652 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA472218E93AD000B5652 /* Int+Extension.swift */; };
 		94CAA475218E93AD000B5652 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA472218E93AD000B5652 /* Int+Extension.swift */; };
+		94CAA477218E9899000B5652 /* InternetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA476218E9899000B5652 /* InternetStatus.swift */; };
+		94CAA478218E9899000B5652 /* InternetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA476218E9899000B5652 /* InternetStatus.swift */; };
+		94CAA479218E9899000B5652 /* InternetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA476218E9899000B5652 /* InternetStatus.swift */; };
+		94CAA47B218E9AA1000B5652 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */; };
+		94CAA47C218E9AA1000B5652 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */; };
+		94CAA47D218E9AA1000B5652 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedEncodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		94CAA402218DBE7E000B5652 /* Drama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CAA405218DBE7E000B5652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94CAA40A218DBE7E000B5652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +102,8 @@
 		94CAA462218E8A09000B5652 /* Cell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extension.swift"; sourceTree = "<group>"; };
 		94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		94CAA472218E93AD000B5652 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		94CAA476218E9899000B5652 /* InternetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetStatus.swift; sourceTree = "<group>"; };
+		94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +200,7 @@
 			children = (
 				94CAA437218DC108000B5652 /* APIClient.swift */,
 				94CAA43A218DDA6D000B5652 /* DataManager.swift */,
+				94CAA476218E9899000B5652 /* InternetStatus.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -209,9 +220,11 @@
 				94CAA462218E8A09000B5652 /* Cell+Extension.swift */,
 				94CAA44D218DF0FA000B5652 /* Date+Extension.swift */,
 				94CAA444218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift */,
+				94A05958218EA932007E0444 /* KeyedEncodingContainer+Extension.swift */,
 				94CAA466218E8AFE000B5652 /* NSObject+Extension.swift */,
 				94CAA451218DF1C5000B5652 /* UIImageView+Extension.swift */,
 				94CAA472218E93AD000B5652 /* Int+Extension.swift */,
+				94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,13 +377,16 @@
 				94CAA463218E8A09000B5652 /* Cell+Extension.swift in Sources */,
 				94CAA452218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
 				94CAA45B218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
+				94CAA477218E9899000B5652 /* InternetStatus.swift in Sources */,
 				94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */,
+				94CAA47B218E9AA1000B5652 /* Notification+Extension.swift in Sources */,
 				94CAA43B218DDA6D000B5652 /* DataManager.swift in Sources */,
 				94CAA434218DC002000B5652 /* DramasViewController.swift in Sources */,
 				94CAA406218DBE7E000B5652 /* AppDelegate.swift in Sources */,
 				94CAA445218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				94CAA438218DC108000B5652 /* APIClient.swift in Sources */,
 				94CAA44A218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94A05959218EA932007E0444 /* KeyedEncodingContainer+Extension.swift in Sources */,
 				94CAA43D218DDB78000B5652 /* DramaModel.swift in Sources */,
 				94CAA44E218DF0FA000B5652 /* Date+Extension.swift in Sources */,
 				94CAA467218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
@@ -385,10 +401,12 @@
 				94CAA41B218DBE80000B5652 /* DramaTests.swift in Sources */,
 				94CAA45C218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
 				94CAA468218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
+				94CAA478218E9899000B5652 /* InternetStatus.swift in Sources */,
 				94CAA439218DC481000B5652 /* APIClient.swift in Sources */,
 				94CAA453218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
 				94CAA43E218DDB78000B5652 /* DramaModel.swift in Sources */,
 				94CAA44B218DEC52000B5652 /* ResponseModel.swift in Sources */,
+				94CAA47C218E9AA1000B5652 /* Notification+Extension.swift in Sources */,
 				94CAA474218E93AD000B5652 /* Int+Extension.swift in Sources */,
 				94CAA446218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				94CAA44F218DF0FA000B5652 /* Date+Extension.swift in Sources */,
@@ -401,9 +419,11 @@
 			files = (
 				94CAA454218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
 				94CAA450218DF0FA000B5652 /* Date+Extension.swift in Sources */,
+				94CAA47D218E9AA1000B5652 /* Notification+Extension.swift in Sources */,
 				94CAA426218DBE80000B5652 /* DramaUITests.swift in Sources */,
 				94CAA447218DDDA0000B5652 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				94CAA465218E8A09000B5652 /* Cell+Extension.swift in Sources */,
+				94CAA479218E9899000B5652 /* InternetStatus.swift in Sources */,
 				94CAA475218E93AD000B5652 /* Int+Extension.swift in Sources */,
 				94CAA469218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 				94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */,
@@ -570,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LB9NKBAM6;
 				INFOPLIST_FILE = Drama/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LB9NKBAM6;
 				INFOPLIST_FILE = Drama/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

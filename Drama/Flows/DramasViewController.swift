@@ -17,26 +17,20 @@ class DramasViewController: UIViewController {
 		}
 	}
 	
-	fileprivate var dramas = [DramaModel]()
+	fileprivate var dramas = [DramaModel]() {
+		didSet {
+			if isViewLoaded {
+				DispatchQueue.main.async {
+					self.tableView.reloadData()
+				}
+			}
+		}
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		DataManager.dramas { [weak self] (dramas, error) in
-			if let `self` = self {
-				if let error = error {
-					//show Error
-					print(error)
-				}
-				
-				if let dramas = dramas {
-					self.dramas = dramas
-					DispatchQueue.main.async {
-						self.tableView.reloadData()
-					}
-				}
-			}
-		}
+		loadData()
     }
     
 
@@ -50,6 +44,21 @@ class DramasViewController: UIViewController {
 
 }
 
+private extension DramasViewController {
+	func loadData() {
+		DataManager.dramas { [weak self] (status) in
+			if let `self` = self {
+				switch status {
+				case .success(let dramas):
+					self.dramas = dramas
+				case .failure(let error):
+					print(error.localizedDescription)
+				}
+			}
+		}
+	}
+}
+
 extension DramasViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return dramas.count
@@ -61,7 +70,7 @@ extension DramasViewController: UITableViewDataSource {
 		let drama = dramas[indexPath.row]
 		cell.primaryLabel.text = drama.name
 
-		let rating = String(format: "%.2f", drama.rating) 
+		let rating = String(format: "%.2f", drama.rating)
 		let issueAt = drama.createdAt.formatter("yyyy/MM/dd")
 		cell.secondaryLabel.text = "評分:\(rating) 出版日期:\(issueAt)"
 

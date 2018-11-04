@@ -41,15 +41,14 @@ class DramaTests: XCTestCase {
 	func testDataDramas() {
 		let expectation = XCTestExpectation(description: "Testing DataManager dramas callback")
 		
-		DataManager.dramas { (dramas, error) in
-			if let error = error {
+		DataManager.dramas { (status) in
+			switch status {
+			case .success(let dramas):
+				print(dramas)
+				expectation.fulfill()
+			case .failure(let error):
 				print(error)
 				assertionFailure("Testing DataManager dramas error reason: \(error.localizedDescription)")
-				expectation.fulfill()
-			}
-			
-			if let dramas = dramas {
-				print(dramas)
 				expectation.fulfill()
 			}
 		}

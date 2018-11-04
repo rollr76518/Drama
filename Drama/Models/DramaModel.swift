@@ -17,7 +17,7 @@ struct DramaModel {
 	var rating: Float
 }
 
-extension DramaModel: Decodable {
+extension DramaModel: Codable {
 	enum CodingKeys: String, CodingKey {
 		case name, totalViews, createdAt, rating
 		case id = "dramaId"
@@ -33,4 +33,19 @@ extension DramaModel: Decodable {
 		thumbURL = try values.decodeURLFromString(String.self, forKey: .thumbURL)
 		rating = try values.decode(Float.self, forKey: .rating)
 	}
+	
+	func encode(to encoder: Encoder) throws {
+		do {
+			var values = encoder.container(keyedBy: CodingKeys.self)
+			try values.encodeIntFromString(id, forKey: .id)
+			try values.encode(name, forKey: .name)
+			try values.encode(totalViews, forKey: .totalViews)
+			try values.encodeStringFromDate(createdAt, forKey: .createdAt)
+			try values.encodeStringFromURL(thumbURL, forKey: .thumbURL)
+			try values.encode(rating, forKey: .rating)
+		} catch {
+			throw error
+		}
+	}
+
 }
