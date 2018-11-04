@@ -23,7 +23,10 @@ class DramasViewController: UIViewController {
 	
 	fileprivate var rawDramas = [DramaModel]() {
 		didSet {
-			filteredDramas = rawDramas
+			DispatchQueue.main.async {
+				let filterString = self.searchBar.text ?? ""
+				self.updateFilterDramas(with: filterString)
+			}
 		}
 	}
 	fileprivate var filteredDramas = [DramaModel]() {
@@ -80,6 +83,18 @@ private extension DramasViewController {
 			}
 		}
 	}
+	
+	func updateFilterDramas(with searchText: String) {
+		if searchText != "" {
+			filteredDramas = rawDramas.filter({ (drama) -> Bool in
+				let lowcaseSearchText = searchText.lowercased()
+				let lowcaseName = drama.name.lowercased()
+				return lowcaseName.contains(lowcaseSearchText)
+			})
+		} else {
+			filteredDramas = rawDramas
+		}
+	}
 }
 
 extension DramasViewController: UITableViewDataSource {
@@ -119,15 +134,7 @@ extension DramasViewController: UITableViewDelegate {
 
 extension DramasViewController: UISearchBarDelegate {
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		if searchText != "" {
-			filteredDramas = rawDramas.filter({ (drama) -> Bool in
-				let lowcaseSearchText = searchText.lowercased()
-				let lowcaseName = drama.name.lowercased()
-				return lowcaseName.contains(lowcaseSearchText)
-			})
-		} else {
-			filteredDramas = rawDramas
-		}
+		updateFilterDramas(with: searchText)
 	}
 	
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -142,5 +149,36 @@ extension DramasViewController: UISearchBarDelegate {
 extension DramasViewController: UIGestureRecognizerDelegate {
 	func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
 		return searchBar.isFirstResponder
+	}
+}
+
+extension DramasViewController {
+	private static let kTableViewContentOffset = "tableViewContentOffset"
+	private static let kSearchBarIsFirstResponder = "searchBarIsFirstResponder"
+	private static let kSearchBarText = "searchBarText"
+	
+	override func encodeRestorableState(with coder: NSCoder) {
+		coder.encode(tableView.contentOffset, forKey: DramasViewController.kTableViewContentOffset)
+		coder.encode(searchBar.isFirstResponder, forKey: DramasViewController.kSearchBarIsFirstResponder)
+		coder.encode(searchBar.text, forKey: DramasViewController.kSearchBarText)
+		
+		super.encodeRestorableState(with: coder)
+	}
+	
+	override func decodeRestorableState(with coder: NSCoder) {
+		tableView.contentOffset = coder.decodeCGPoint(forKey: DramasViewController.kTableViewContentOffset)
+		
+		if coder.decodeBool(forKey: DramasViewController.kSearchBarIsFirstResponder) {
+			searchBar.becomeFirstResponder()
+		}
+
+		let searchText = coder.decodeObject(forKey: DramasViewController.kSearchBarText) as! String
+		searchBar.text = searchText
+		
+		super.decodeRestorableState(with: coder)
+	}
+	
+	override func applicationFinishedRestoringState() {
+		super.applicationFinishedRestoringState()
 	}
 }
