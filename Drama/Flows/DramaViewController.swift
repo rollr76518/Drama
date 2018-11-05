@@ -18,6 +18,7 @@ class DramaViewController: UIViewController {
 		}
 	}
 	
+	@IBOutlet var scrollView: UIScrollView!
 	@IBOutlet var ratingLabel: UILabel!
 	@IBOutlet var issueLabel: UILabel!
 	@IBOutlet var totalViewsLabel: UILabel!
@@ -45,11 +46,14 @@ extension DramaViewController {
 
 extension DramaViewController {
 	private static let kDramaId = "dramaId"
+	private static let kScrollViewContentOffset = "scrollViewContentOffset"
 
 	override func encodeRestorableState(with coder: NSCoder) {
 		if let drama = drama {
 			coder.encode(drama.id, forKey: DramaViewController.kDramaId)
 		}
+		
+		coder.encode(scrollView.contentOffset, forKey: DramaViewController.kScrollViewContentOffset)
 
 		super.encodeRestorableState(with: coder)
 	}
@@ -59,10 +63,19 @@ extension DramaViewController {
 		if let drama = try? DataManager.loadLocalDrama(id: dramaId) {
 			self.drama = drama
 		}
+		
+		let contentOffset = coder.decodeCGPoint(forKey: DramaViewController.kScrollViewContentOffset)
+
+		perform(#selector(setScrollViewContentOffset), with: contentOffset, afterDelay: 0.25)
+
 		super.decodeRestorableState(with: coder)
 	}
 	
 	override func applicationFinishedRestoringState() {
 		super.applicationFinishedRestoringState()
+	}
+	
+	@objc func setScrollViewContentOffset(_ contentOffset: CGPoint) {
+		scrollView.contentOffset = contentOffset
 	}
 }

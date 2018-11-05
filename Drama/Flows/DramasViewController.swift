@@ -18,15 +18,19 @@ class DramasViewController: UIViewController {
 		}
 	}
 	
-	//TODO: UISearchBarController
-	@IBOutlet var searchBar: UISearchBar!
+	var searchController = UISearchController(searchResultsController: nil)
+	var searchBar: UISearchBar? {
+		didSet {
+			searchBar?.delegate = self
+		}
+	}
 	
 	let kTableViewCellHeight: CGFloat = 120.0
 	
 	var rawDramas = [DramaModel]() {
 		didSet {
 			DispatchQueue.main.async {
-				let filterString = self.searchBar.text ?? ""
+				let filterString = self.searchController.searchBar.text ?? ""
 				self.updateFilterDramas(with: filterString)
 			}
 		}
@@ -44,8 +48,8 @@ class DramasViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		title = "戲劇列表"
-		
+		setupLayout()
+		setupSearchController()
 		loadData()
     }
 
@@ -59,11 +63,23 @@ class DramasViewController: UIViewController {
 
 	// MARK: - IBActions
 	@IBAction func viewDidTap(_ sender: UITapGestureRecognizer) {
-		searchBar.resignFirstResponder()
+		searchBar?.resignFirstResponder()
 	}
 }
 
 private extension DramasViewController {
+	func setupSearchController() {
+		searchController.dimsBackgroundDuringPresentation = false
+		searchBar = searchController.searchBar
+	}
+	
+	func setupLayout() {
+		title = "戲劇列表"
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.searchController = searchController
+		definesPresentationContext = true
+	}
+	
 	func loadData() {
 		HYCLoadingView.shared.show()
 		
@@ -139,10 +155,14 @@ extension DramasViewController: UISearchBarDelegate {
 		updateFilterDramas(with: searchText)
 	}
 	
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		updateFilterDramas(with: "")
+	}
+
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
 	}
-	
+
 	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
 	}
@@ -150,7 +170,7 @@ extension DramasViewController: UISearchBarDelegate {
 
 extension DramasViewController: UIGestureRecognizerDelegate {
 	func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-		return searchBar.isFirstResponder
+		return searchBar?.isFirstResponder ?? false
 	}
 }
 
@@ -161,26 +181,31 @@ extension DramasViewController {
 	
 	override func encodeRestorableState(with coder: NSCoder) {
 		coder.encode(tableView.contentOffset, forKey: DramasViewController.kTableViewContentOffset)
-		coder.encode(searchBar.isFirstResponder, forKey: DramasViewController.kSearchBarIsFirstResponder)
-		coder.encode(searchBar.text, forKey: DramasViewController.kSearchBarText)
+		coder.encode(searchController.searchBar.isFirstResponder, forKey: DramasViewController.kSearchBarIsFirstResponder)
+		coder.encode(searchController.searchBar.text, forKey: DramasViewController.kSearchBarText)
 		
 		super.encodeRestorableState(with: coder)
 	}
 	
 	override func decodeRestorableState(with coder: NSCoder) {
 		tableView.contentOffset = coder.decodeCGPoint(forKey: DramasViewController.kTableViewContentOffset)
+
+		if let searchText = coder.decodeObject(forKey: DramasViewController.kSearchBarText) as? String {
+			searchBar?.text = searchText
+		}
 		
 		if coder.decodeBool(forKey: DramasViewController.kSearchBarIsFirstResponder) {
-			searchBar.becomeFirstResponder()
+			perform(#selector(searchBarBecomeFirstResponder), with: nil, afterDelay: 0.25)
 		}
-
-		let searchText = coder.decodeObject(forKey: DramasViewController.kSearchBarText) as! String
-		searchBar.text = searchText
 		
 		super.decodeRestorableState(with: coder)
 	}
 	
 	override func applicationFinishedRestoringState() {
 		super.applicationFinishedRestoringState()
+	}
+	
+	@objc func searchBarBecomeFirstResponder() {
+		searchBar?.becomeFirstResponder()
 	}
 }

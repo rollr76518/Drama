@@ -18,15 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="H8R-tD-IvB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8JK-X6-pli"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-07-cdZ">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="dzA-nj-iQO"/>
@@ -39,10 +32,7 @@
                         <constraints>
                             <constraint firstItem="V0d-07-cdZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vX-Y0-snq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V0d-07-cdZ" secondAttribute="trailing" id="9ew-7e-hb0"/>
-                            <constraint firstItem="V0d-07-cdZ" firstAttribute="top" secondItem="H8R-tD-IvB" secondAttribute="bottom" id="H7d-ax-cjo"/>
-                            <constraint firstItem="H8R-tD-IvB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PEX-mx-8vY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H8R-tD-IvB" secondAttribute="trailing" id="ehC-7T-Gh2"/>
-                            <constraint firstItem="H8R-tD-IvB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jgl-fx-kIY"/>
+                            <constraint firstItem="V0d-07-cdZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a4u-by-ANW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V0d-07-cdZ" secondAttribute="bottom" id="xQ6-xe-QKN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -52,7 +42,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="N3b-oM-Ula"/>
                     <connections>
-                        <outlet property="searchBar" destination="H8R-tD-IvB" id="zdg-n1-yGF"/>
                         <outlet property="tableView" destination="V0d-07-cdZ" id="pUk-fN-h8A"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="4BO-8G-icg"/>
                         <segue destination="EIz-uc-vc3" kind="show" identifier="DramaViewController" id="cge-2I-kJm"/>
@@ -80,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVe-lP-Xo9">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="611.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Tgx-AF-mop">
                                                 <rect key="frame" x="8" y="0.0" width="359" height="80"/>
@@ -114,7 +103,10 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-qB-eDJ">
-                                                <rect key="frame" x="0.0" y="85" width="375" height="518"/>
+                                                <rect key="frame" x="0.0" y="85" width="375" height="526.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="v6a-qB-eDJ" secondAttribute="height" multiplier="1000:1404" id="vcX-G9-MTu"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -144,13 +136,13 @@
                             <constraint firstItem="zFX-38-MOt" firstAttribute="top" secondItem="6RW-7t-7H4" secondAttribute="top" id="X05-KC-P4V"/>
                             <constraint firstItem="6RW-7t-7H4" firstAttribute="bottom" secondItem="zFX-38-MOt" secondAttribute="bottom" id="axH-gO-TpN"/>
                             <constraint firstItem="zFX-38-MOt" firstAttribute="leading" secondItem="6RW-7t-7H4" secondAttribute="leading" id="gwq-9f-NOe"/>
-                            <constraint firstItem="BVe-lP-Xo9" firstAttribute="height" secondItem="6RW-7t-7H4" secondAttribute="height" id="uK3-uM-ohV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6RW-7t-7H4"/>
                     </view>
                     <connections>
                         <outlet property="issueLabel" destination="Gda-Um-qV6" id="pZw-18-ZQB"/>
                         <outlet property="ratingLabel" destination="T6r-hq-7Mr" id="BFE-fw-5tC"/>
+                        <outlet property="scrollView" destination="zFX-38-MOt" id="m1A-rF-RXo"/>
                         <outlet property="thumbImageView" destination="v6a-qB-eDJ" id="VgG-kT-xZC"/>
                         <outlet property="totalViewsLabel" destination="Hx1-GG-rn8" id="bTN-SC-CfG"/>
                     </connections>
