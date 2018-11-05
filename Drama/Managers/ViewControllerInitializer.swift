@@ -8,9 +8,9 @@
 
 import UIKit.UIViewController
 
-struct ViewControllernitializer {}
+struct ViewControllerInitializer {}
 
-extension ViewControllernitializer {
+extension ViewControllerInitializer {
 	static func viewController<T: UIViewController>(_ class: T.Type) -> T {
 		let window = UIApplication.shared.keyWindow!
 		let navigationController = window.rootViewController as! UINavigationController

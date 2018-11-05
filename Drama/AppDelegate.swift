@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 					guard let drama = try? DataManager.loadLocalDrama(id: id) else {
 						return false
 					}
-					let dramaViewController = ViewControllernitializer.viewController(DramaViewController.self)
+					let dramaViewController = ViewControllerInitializer.viewController(DramaViewController.self)
 					dramaViewController.drama = drama
 					return true
 				case .none:
