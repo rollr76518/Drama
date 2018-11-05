@@ -65,8 +65,13 @@ class DramasViewController: UIViewController {
 
 private extension DramasViewController {
 	func loadData() {
-		//TODO: HUD
+		HYCLoadingView.shared.show()
+		
 		DataManager.dramas { [weak self] (status) in
+			DispatchQueue.main.async {
+				HYCLoadingView.shared.dismiss()
+			}
+			
 			if let `self` = self {
 				switch status {
 				case .success(let dramas):

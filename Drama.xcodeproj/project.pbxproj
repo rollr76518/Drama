@@ -64,6 +64,9 @@
 		94DE7E11218F61C000252A90 /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DE7E10218F61C000252A90 /* ViewControllerInitializer.swift */; };
 		94DE7E12218F61C000252A90 /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DE7E10218F61C000252A90 /* ViewControllerInitializer.swift */; };
 		94DE7E13218F61C000252A90 /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DE7E10218F61C000252A90 /* ViewControllerInitializer.swift */; };
+		94F60D6E219014D4001E167A /* HYCLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F60D6D219014D4001E167A /* HYCLoadingView.swift */; };
+		94F60D6F219014D4001E167A /* HYCLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F60D6D219014D4001E167A /* HYCLoadingView.swift */; };
+		94F60D70219014D4001E167A /* HYCLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F60D6D219014D4001E167A /* HYCLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,7 @@
 		94CAA47A218E9AA1000B5652 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		94DE7E0C218F4F6B00252A90 /* UniversalLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkParser.swift; sourceTree = "<group>"; };
 		94DE7E10218F61C000252A90 /* ViewControllerInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInitializer.swift; sourceTree = "<group>"; };
+		94F60D6D219014D4001E167A /* HYCLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYCLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		94CAA442218DDB8F000B5652 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				94F60D6D219014D4001E167A /* HYCLoadingView.swift */,
 				94CAA437218DC108000B5652 /* APIClient.swift */,
 				94CAA43A218DDA6D000B5652 /* DataManager.swift */,
 				94CAA476218E9899000B5652 /* InternetStatus.swift */,
@@ -401,6 +406,7 @@
 				94CAA463218E8A09000B5652 /* Cell+Extension.swift in Sources */,
 				94DE7E0D218F4F6B00252A90 /* UniversalLinkParser.swift in Sources */,
 				94CAA452218DF1C5000B5652 /* UIImageView+Extension.swift in Sources */,
+				94F60D6E219014D4001E167A /* HYCLoadingView.swift in Sources */,
 				94CAA45B218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
 				94CAA477218E9899000B5652 /* InternetStatus.swift in Sources */,
 				94CAA436218DC00C000B5652 /* DramaViewController.swift in Sources */,
@@ -425,6 +431,7 @@
 				94CAA464218E8A09000B5652 /* Cell+Extension.swift in Sources */,
 				94CAA41B218DBE80000B5652 /* DramaTests.swift in Sources */,
 				94CAA45C218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
+				94F60D6F219014D4001E167A /* HYCLoadingView.swift in Sources */,
 				94CAA468218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 				94CAA478218E9899000B5652 /* InternetStatus.swift in Sources */,
 				94CAA439218DC481000B5652 /* APIClient.swift in Sources */,
@@ -457,6 +464,7 @@
 				947523F4218EC0EE00F8FE94 /* UIAlertController+Extension.swift in Sources */,
 				94CAA469218E8AFE000B5652 /* NSObject+Extension.swift in Sources */,
 				94DE7E13218F61C000252A90 /* ViewControllerInitializer.swift in Sources */,
+				94F60D70219014D4001E167A /* HYCLoadingView.swift in Sources */,
 				94CAA44C218DEC52000B5652 /* ResponseModel.swift in Sources */,
 				94CAA45D218E86DD000B5652 /* BriefTableViewCell.swift in Sources */,
 				94CAA43F218DDB78000B5652 /* DramaModel.swift in Sources */,
